@@ -1,25 +1,12 @@
-
-.inputtext{
-  padding: 8px;
-  width:500px;
-  margin:10px 0;
-}
-.inputtext input{
-  padding: 10px;
-  width:400px;
-}
 .form{
-  margin-left: 8px;
+  text-align: center;
+  margin-top: 30px;
 }
-lable{
-  margin-left: 8px;
+span{
+  color:red;
 }
-.btn{
-  background-color: #04AA6D;
-  color: white;
-  padding: 13px 15px;
-  border: none;
-  cursor: pointer;
-  width: 425px;
-  margin-left: 10px;
-  }
+input{
+  width:150px;
+  height:20px;
+  position: fixed;
+}

@@ -1,36 +1,56 @@
+import { useState } from "react";
+
 function Homepage(){
+    const[user,setUser]=useState("")
+    const[password,setPassword]=useState("")
+    const[usererr,setUsererr]=useState(false)
+    const[passerr,setPasserr]=useState(false)
+    
+
+
+    function loginHandler(e){
+        
+        if(user.length<3||password.length<4){
+            document.write("type is wrong");
+        }
+        else{
+            alert("all thing good")
+        }
+        e.preventDefault()
+    }
+    function useHandler(e){
+        let item =e.target.value;
+        if(item.length<3){
+            setUsererr(true)
+        }
+        else{
+            setUsererr(false)
+        }
+        setUser(item)
+
+    }
+    function passHandler(e){
+        let item =e.target.value;
+        if(item.length<6){
+            setPasserr(true)
+        }
+        else{
+            setPasserr(false)
+        }
+        setPassword(item)
+
+    }
 
     return(
         <div className="form">
-            <form>
-            <h1>Registration Form</h1>
-            <p>Please fill in this form to create an account.</p>
-            <lable>Name</lable>
-            <div className="inputtext">
-                <input type="text" placeholder=" Name"/>
-            </div>
-            <lable>Surname</lable>
-            <div className="inputtext">
-                <input type="text" placeholder="Surname"/>
-            </div>
-        
-            <lable>Roll Number</lable>
-            <div className="inputtext">
-                <input type="number" placeholder=" Roll Number"/>
-            </div>
-            <lable>Mobile No.</lable>
-            <div className="inputtext">
-                <input type="number" placeholder=" Mobile Number"/>
-            </div>
-            <lable>Address</lable>
-            <div className="inputtext">
-                <input type="text" placeholder=" Address"/>
-            </div>
-            <button className="btn">Submit</button>
+            <form onSubmit={loginHandler}>
+           <input type= "text"  placeholder="Username" onChange={useHandler}/>{usererr?<span>input is not valid</span>:""}
+           <br/>
+           <input type= "password"  placeholder="Password" onChange={passHandler}/>{passerr?<span>Password is not valid</span>:""}
+           <br/>
+            <button type="submit">Register</button>
             </form>
          </div>
-
-
     
     )
 }
